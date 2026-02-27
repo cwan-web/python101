@@ -1,3 +1,4 @@
+# TASK 1: VARIABLES + CONDITIONAL STATEMENTS
 name =  "Chasya"
 age = 25
 mark = 90.0
@@ -222,10 +223,23 @@ print(sum(scores))
     
 
 
+# TASK 4:LIST + FUNCTIONS
+#  No.1
+numbers = {1,2,3,4,5}
+output = type(numbers)
+output = numbers.add(5)
+print(output)
+print(numbers)
 
-
+# No.2
+numbers = {1,2,3,4,5}
+largest = max(numbers)
+print(f"The largest number in the set is: {largest}")
+# No.3
 numbers = {1,2,3,4,5}
 numbers = sum(numbers)
+max = numbers [0]
+
 print(f"The sum of the numbers in the set is: {numbers}")
 
 
@@ -240,21 +254,10 @@ student = {
 
 }
 print(student)
-# TASK 4:LIST + FUNCTIONS
 
-# No.1
-numbers = {1,2,3,4,5}
-output = type(numbers)
-output = numbers.add(5)
-print(output)
-print(numbers)
+
 
 # No.2
-numbers = {1,2,3,4,5}
-largest = max(numbers)
-print(f"The largest number in the set is: {largest}")
-
-# No.3
 student["marks"] = 80.0
 print(student)
 
@@ -267,11 +270,36 @@ for item in student:
 
     #   TASK 6: OOP
     class BankAccount:
-        def __init__(self, deposit, withdraw, get_balance):
-            self.deposit = deposit
-            self.withdraw = withdraw
-            self.get_balance = get_balance
-            self.__balance = 20,000
+        def __init__(self, amount):
+            self.amount = amount
+            self._balance = amount 
+
+        def deposit(self, amount):
+            self._balance += amount
+            print(f"Deposited {amount}. New balance: {self._balance}")
+
+
+        def withdraw(self, amount):
+            if self._balance < amount:
+                print(f"Your balance is {self._balance} not enough money!")
+            else:
+                self._balance -= amount
+                print(f"Your balance is now {self._balance}!")
+
+        def get_balance(self):
+            print(f"Your balance is {self._balance}!")
+
+
+        firstAccount = BankAccount(1000)
+        print("**********")
+        firstAccount.get_balance()
+        firstAccount.deposit(500)
+        firstAccount.withdraw(200)
+
+
+    print("**********")
+            
+        
 
 
 
